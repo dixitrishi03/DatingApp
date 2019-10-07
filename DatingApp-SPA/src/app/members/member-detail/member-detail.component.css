@@ -1,0 +1,17 @@
+.img-thumbnail {
+  padding: 25px;
+  height: 85%;
+  width: 85%;
+  border: none;
+}
+.card-body {
+  padding: 0 25px;
+}
+.card-footer {
+  padding: 10px 15px;
+  border-top: none;
+}
+.card ,.card-footer,.img-thumbnail {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: beige;
+}
