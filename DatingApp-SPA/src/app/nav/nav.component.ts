@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
         this.alertifyService.error(error);
       },
       () => {
-        this.routerService.navigate(['\member-list']);
+        this.routerService.navigate(['/members']);
       }
     );
   }
