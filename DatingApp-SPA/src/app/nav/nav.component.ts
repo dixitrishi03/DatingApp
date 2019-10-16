@@ -3,7 +3,6 @@ import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -11,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
   model: any = {};
+  photoUrl: string;
 
   constructor(
     public authService: AuthService,
@@ -18,7 +18,11 @@ export class NavComponent implements OnInit {
     private routerService: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.authService.currentPhotoUrl.subscribe(
+      photoUrl => (this.photoUrl = photoUrl)
+    );
+  }
 
   login() {
     this.authService.login(this.model).subscribe(
@@ -40,7 +44,10 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.authService.decodedToken = null;
+    this.authService.currentUser = null;
     this.alertifyService.message('logged out');
-    this.routerService.navigate(['\home']);
+    this.routerService.navigate(['home']);
   }
 }
