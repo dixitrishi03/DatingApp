@@ -9,7 +9,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import {TimeAgoPipe} from 'time-ago-pipe';
 
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
@@ -58,7 +58,9 @@ export function tokenGetter() {
     FormsModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
+    PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
+    ButtonsModule.forRoot(),
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     FileUploadModule,
