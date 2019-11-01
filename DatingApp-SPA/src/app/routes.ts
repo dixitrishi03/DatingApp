@@ -38,10 +38,10 @@ export const appRoutes: Routes = [
         resolve: {
           user: MemberEditResover
         },
-        canDeactivate:[PreventUnsavedChanges]
+        canDeactivate: [PreventUnsavedChanges]
       },
 
-      { path: 'lists', component: ListsComponent },
+      { path: 'lists', component: ListsComponent, resolve : {users : MemberListResover} },
 
       { path: 'messages', component: MessagesComponent }
     ]

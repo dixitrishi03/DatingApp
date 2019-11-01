@@ -11,13 +11,7 @@
   padding: 10px 15px;
   border-top: none;
 }
-.card,
-.card-footer,
-.img-thumbnail {
-  background-color: rgba(0, 0, 0, 0);
-  border-color: beige;
-}
-
-textarea {
-  background-color: lightgrey;
+textarea, .form-control
+{
+  background-color: linen;
 }
