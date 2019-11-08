@@ -15,3 +15,10 @@ textarea, .form-control
 {
   background-color: linen;
 }
+.card{
+  border:  1px solid linen;
+}
+.card,.card-body,.card-footer,img
+{
+  background-color: #222;
+}
